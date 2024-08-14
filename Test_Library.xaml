@@ -1,4 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010" x:Class="Test_Library" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="607,1496" sap2010:WorkflowViewState.IdRef="Test_Library_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Test_Library" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="607,1673" sap2010:WorkflowViewState.IdRef="Test_Library_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -37,6 +37,7 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -82,21 +83,29 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test_Library" sap:VirtualizedContainerService.HintSize="512,1431" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test_Library" sap:VirtualizedContainerService.HintSize="512,1608" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome: ACME System 1 - Log In" sap:VirtualizedContainerService.HintSize="450,1343" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="7b112448-f4dc-4b7b-b64f-475ebfec850b" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome: ACME System 1 - Log In" sap:VirtualizedContainerService.HintSize="450,1520" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="7b112448-f4dc-4b7b-b64f-475ebfec850b" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1103" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1280" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -165,6 +174,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Test&quot;]" />
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'User options'" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable CVScreenId="c89ec02b-f21b-4348-b7eb-78ac59f48b3c" ContentHash="b07YprWLCEirUcTWA6hCYg" CvElementArea="181, 460, 204, 50" CvTextArea="242, 476, 102, 20" CvTextArgument="User options" CvType="Button" DesignTimeRectangle="183, 363, 200, 46" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl parentid='dashmenu' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dashmenu' tag='BUTTON' type='button' class='btn btn-default btn-lg dropdown-toggle' aaname='                  User options' check:text='User options' /&gt;" Guid="42bbed5b-1b8a-48d8-9b89-3cb8804a24f9" ImageBase64="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" InformativeScreenshot="86adb58d011303909699ad2d27472a42.png" Reference="l12vSTys8kujh2TlRroQcg/d1vwvk0qHEC2knBD-bifxg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
